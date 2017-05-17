@@ -1,0 +1,11 @@
+<ion-list>
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <page-dynamic-form-element *ngFor="let element of elements" [element]="element" [form]="form"></page-dynamic-form-element>
+    <ion-item>
+      <button ion-button type="submit">Show Values</button>
+    </ion-item>
+  </form>
+  <ion-item>
+    <ion-textarea [value]="payLoad" rows='5'></ion-textarea>
+  </ion-item>
+</ion-list>

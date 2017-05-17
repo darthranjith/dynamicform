@@ -1,0 +1,10 @@
+<div [formGroup]="form">
+  <ion-item>
+    <ion-label fixed>{{element.label}}</ion-label>
+    {{element.controlType}}
+    <ion-input text-right *ngIf="element.controlType==='textbox'" [formControlName]="element.key" [id]="element.key" [type]="element.type"></ion-input>
+    <ion-select interface="popover" text-right *ngIf="element.controlType==='dropdown'" [id]="element.key" [formControlName]="element.key">
+      <ion-option *ngFor="let opt of element.options" [value]="opt.key">{{opt.value}}</ion-option>
+    </ion-select>
+  </ion-item>
+</div>
